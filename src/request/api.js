@@ -1,7 +1,7 @@
 /**
  * api接口统一管理
  */
-import {get,post} from "./axios";
+import {get} from "./axios";
 
 // 数据详情
 export const getUserData = data => get("v1/query?user_name=root", data);

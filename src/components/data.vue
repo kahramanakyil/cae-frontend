@@ -105,14 +105,21 @@ export default {
   },
   methods: {
     ConsumeCpu: function () {
-      this.$message({
-        showClose: true,
-        message: '恭喜你，这是一条成功消息',
-        type: 'success',
-        customClass: 'request-msg'
-      });
       consumeCpu({}).then((resp) => {
         console.log(resp);
+        this.$message({
+          showClose: true,
+          message: 'successful request!',
+          type: 'success',
+          customClass: 'request-msg'
+        });
+      },() => {
+        this.$message({
+          showClose: true,
+          message: 'bad request!',
+          type: 'error',
+          customClass: 'request-msg'
+        });
       });
     },
   }

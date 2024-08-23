@@ -11,5 +11,5 @@ export const getTotalScanNum = data => get("v1/total_scan_num", data);
 // 
 
 //消耗CPU
-export const consumeCpu = data => post("v1/consume_cpu", data);
+export const consumeCpu = data => get("v1/consume_cpu", data);
  

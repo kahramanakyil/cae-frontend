@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="title-btn">
-    <el-button type="danger" :plain="true" class="btn" @click="ConsumeCpu()">Client Request Test</el-button>
+    <el-button type="danger" :plain="true" class="btn" @click="GetUserData()">Client Request Test</el-button>
     </div>
     <div class="content">
       <img alt="" src="../assets/backgroundImg.png">
@@ -87,7 +87,7 @@ ul li {
 
   
 <script>
-import { consumeCpu } from "../request/api";
+import { getUserData } from "../request/api";
 export default {
   data() {
     return {
@@ -104,19 +104,19 @@ export default {
     };
   },
   methods: {
-    ConsumeCpu: function () {
-      consumeCpu({}).then((resp) => {
+    GetUserData: function () {
+      getUserData({}).then((resp) => {
         console.log(resp);
         this.$message({
           showClose: true,
-          message: 'successful request!',
+          message: 'got user data successfully!',
           type: 'success',
           customClass: 'request-msg'
         });
       },() => {
         this.$message({
           showClose: true,
-          message: 'bad request!',
+          message: 'error!',
           type: 'error',
           customClass: 'request-msg'
         });

@@ -2,7 +2,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/v1/consume_cpu': {
-                target: 'http://app-test-backend:9090',
+                target: process.env.VUE_APP_URL,
                 changeOrigin: true,
                 ws: true
             }

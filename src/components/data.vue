@@ -5,15 +5,15 @@
       <ul>
         <li>
           <span class="li-doc">·</span>
-          <span class="li-text">上云简单</span>
+          <span class="li-text">Simple Cloudification</span>
         </li>
         <li>
           <span class="li-doc">·</span>
-          <span class="li-text">运行高效</span>
+          <span class="li-text">Run Efficiently</span>
         </li>
         <li>
           <span class="li-doc">·</span>
-          <span class="li-text">安全可信</span>
+          <span class="li-text">Secure and Trustworthy</span>
         </li>
       </ul>
     </div>

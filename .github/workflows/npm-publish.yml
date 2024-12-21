@@ -12,22 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           cache: npm
           cache-dependency-path: ./package.json
-          node-version: 20
-      - run: npm ci
-      - run: npm test
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+          node-version: 16
+      
+      - name: npm install and build
+        #执行执行某个shell命令或脚本
+        run: |
+          npm install
+          npm run build
+      
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm run build
+          name: node-app
+          path: .
+        

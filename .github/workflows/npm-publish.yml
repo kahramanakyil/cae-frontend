@@ -18,17 +18,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
-          cache-dependency-path: package.json
+          cache-dependency-path: node_modules/.package-lock.json
           node-version: 16
       
       - name: npm install and build
         #执行执行某个shell命令或脚本
         run: |
+          chmod 777 node_modules/.bin/vue-cli-service
           npm install
           npm run build
       
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: node-app
           path: .
